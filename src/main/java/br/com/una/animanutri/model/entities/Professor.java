@@ -14,16 +14,16 @@ import java.io.Serializable;
 @Builder
 @Entity
 @Table(name = "tb_professor")
-@Schema(name = "Professor")
+@Schema(description = "Detalhes sobre o Professor")
 public class Professor implements Serializable {
 
-    @Schema(description = "Identificação unica do Professor.",
+    @Schema(description = "Identificação única do Professor (gerado automaticamente pelo sistema)",
             example = "1", required = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Schema(description = "Nome referente ao Professor.",
+    @Schema(description = "Nome referente ao Professor",
             example = "Prof. Antônio Silva Jonimo", required = true)
     private String nome;
 }

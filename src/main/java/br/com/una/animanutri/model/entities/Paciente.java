@@ -27,6 +27,27 @@ public class Paciente implements Serializable {
             example = "Marcos Silva Jonimo", required = true)
     private String nome;
 
+    @Schema(description = "Email do Paciente.",
+            example = "marcos.silva@exemplo.com", required = true)
+    private String email;
+
+    @Schema(description = "Idade do Paciente.",
+            example = "30", required = true)
+    private Integer idade;
+
+    @Schema(description = "Sexo do Paciente.",
+            example = "Masculino", required = true)
+    private String sexo;
+
+    @Schema(description = "Telefone do Paciente.",
+            example = "(11) 98765-4321", required = true)
+    private String telefone;
+
+    @Schema(description = "Anamnese do Paciente.",
+            example = "Paciente apresenta sintomas de...", required = false)
+    @Column(length = 2000) // Este campo pode ser longo, então é definido um tamanho maior
+    private String anamnese;
+
     @Schema(description = "Associação da Classe Aluno",
             example = "1", required = true, ref = "Aluno")
     @ManyToOne
