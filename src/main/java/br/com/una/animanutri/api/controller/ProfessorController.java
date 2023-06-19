@@ -42,7 +42,7 @@ public class ProfessorController {
         }
     }
 
-    @Operation(summary = "Altera um Professor pelo id Id", tags = { "professores", "put" })
+    @Operation(summary = "Altera um Professor pelo Id", tags = { "professores", "put" })
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = {
                     @Content(schema = @Schema(implementation = Aluno.class), mediaType = "application/json") }),

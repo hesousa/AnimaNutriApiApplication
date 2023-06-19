@@ -18,22 +18,26 @@ import java.time.LocalDateTime;
 @Table(name = "tb_aluno")
 @Schema(name = "Aluno")
 public class Aluno implements Serializable {
-
-    @Schema(description = "Identificação unica do Aluno.",
-            example = "1", required = true)
+    @Schema(description = "Identificação única do Aluno.", example = "1", required = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Schema(description = "Associação da Classe Professor",
-            example = "1", required = true, ref = "Professor")
-    @ManyToOne
-    @JoinColumn(name = "professor_id")
-    private Professor professor;
+    @Schema(description = "Nome do Aluno", required = true)
+    private String nome;
 
-    @Schema(description = "Data e hora de nascimento do Aluno.",
-            example = "Marcos Silva Jonimo", required = true)
-    @Column(name = "data_nascimento")
+    @Schema(description = "Idade do Aluno", required = true)
+    private int idade;
+
+    @Schema(description = "Número de celular do Aluno", required = true)
+    private String celular;
+
+    @Schema(description = "Email do Aluno", required = true)
+    private String email;
+
+    @Schema(description = "Sexo do Aluno", required = true)
+    private String sexo;
+
+    @Schema(description = "Data de Nascimento do Aluno")
     private LocalDateTime dataNascimento;
-
 }
